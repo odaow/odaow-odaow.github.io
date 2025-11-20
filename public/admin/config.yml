@@ -43,7 +43,7 @@ collections:
               { label: "ID", name: "id", widget: "string" },
               { label: "Title (English)", name: "title.en", widget: "string" },
               { label: "Title (Arabic)", name: "title.ar", widget: "string" },
-              { label: "Category", name: "category", widget: "select", options: ["architectural", "structural", "bim", "interior"] },
+              { label: "Category", name: "category", widget: "select", options: ["residential", "commercial", "religious", "industrial", "educational", "healthcare", "infrastructure"] },
               { label: "Main Image", name: "image", widget: "image" },
               { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" } },
               { label: "Description (English)", name: "description.en", widget: "text" },

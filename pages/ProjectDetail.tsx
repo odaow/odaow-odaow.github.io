@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useData } from '../context/DataContext';
 import { ArrowLeft, ArrowRight, Calendar, MapPin, User, Tag, Grid } from 'lucide-react';
+import { PROJECT_CATEGORIES } from '../constants';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,6 +22,9 @@ const ProjectDetail: React.FC = () => {
 
   const gallery = [project.image, ...(project.gallery || [])].filter((v, i, a) => a.indexOf(v) === i);
   const BackIcon = dir === 'rtl' ? ArrowRight : ArrowLeft;
+
+  // Helper to get proper label for category
+  const categoryLabel = PROJECT_CATEGORIES.find(c => c.id === project.category)?.label[lang] || project.category;
 
   return (
     <div className="py-16 bg-gray-50 min-h-screen">
@@ -40,7 +45,7 @@ const ProjectDetail: React.FC = () => {
         <div className="mb-10">
             <div className="flex flex-wrap items-center gap-4 mb-3">
                <span className="bg-[#4A7C59]/10 text-[#4A7C59] px-3 py-1 rounded-full text-sm font-semibold tracking-wide uppercase">
-                  {project.category}
+                  {categoryLabel}
                </span>
                {project.year && (
                  <span className="text-gray-500 text-sm font-medium flex items-center gap-1">
@@ -122,7 +127,7 @@ const ProjectDetail: React.FC = () => {
                    <Tag className="text-[#4A7C59] shrink-0 mt-0.5" size={18} />
                    <div>
                       <span className="block text-xs text-gray-400 uppercase tracking-wider">{t.projects.category}</span>
-                      <span className="text-gray-700 font-medium">{project.category}</span>
+                      <span className="text-gray-700 font-medium">{categoryLabel}</span>
                    </div>
                  </li>
                </ul>

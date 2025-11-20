@@ -37,7 +37,7 @@
         "client": "Client",
         "location": "Location",
         "year": "Completion Year",
-        "category": "Category",
+        "category": "Building Type",
         "backToProjects": "Back to Projects"
       },
       "lab": {
@@ -99,7 +99,7 @@
         "client": "العميل",
         "location": "الموقع",
         "year": "سنة الإنجاز",
-        "category": "التصنيف",
+        "category": "نوع المبنى",
         "backToProjects": "العودة للمشاريع"
       },
       "lab": {
@@ -174,6 +174,12 @@
       "title": { "en": "Lighting Design", "ar": "تصميم الإضاءة" },
       "description": { "en": "Strategic lighting solutions to enhance architectural features and energy efficiency.", "ar": "حلول إضاءة استراتيجية لتعزيز الميزات المعمارية وكفاءة الطاقة." },
       "iconName": "Lightbulb"
+    },
+    {
+      "id": "landscape",
+      "title": { "en": "Landscape", "ar": "لاندسكيب" },
+      "description": { "en": "Designing sustainable outdoor environments that blend nature with built structures.", "ar": "تصميم بيئات خارجية مستدامة تمزج الطبيعة مع الهياكل المبنية." },
+      "iconName": "Trees"
     }
   ],
   "team": [
@@ -260,7 +266,7 @@
     {
       "id": "p1",
       "title": { "en": "Tubas Commercial Center", "ar": "مركز طوباس التجاري" },
-      "category": "architectural",
+      "category": "commercial",
       "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
       "description": {
         "en": "A state-of-the-art commercial complex in the heart of Tubas, featuring modern retail spaces, offices, and underground parking. The design prioritizes natural light and accessible flow, becoming a new landmark for the city.",
@@ -279,7 +285,7 @@
     {
       "id": "p2",
       "title": { "en": "Modern Hillside Residence", "ar": "سكن عصري على التلال" },
-      "category": "structural",
+      "category": "residential",
       "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
       "description": {
         "en": "Complex structural engineering for a multi-level residence built on a steep incline. We utilized advanced cantilever techniques and reinforced retaining walls to ensure safety while maximizing panoramic views.",
@@ -298,7 +304,7 @@
     {
       "id": "p3",
       "title": { "en": "BIM Hospital Implementation", "ar": "تطبيق BIM للمستشفيات" },
-      "category": "bim",
+      "category": "healthcare",
       "image": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
       "description": {
         "en": "A full-scale BIM implementation for a major medical facility. The 5D model integrated architectural, structural, and MEP systems for clash detection, cost estimation, and lifecycle management.",
@@ -317,7 +323,7 @@
     {
       "id": "p4",
       "title": { "en": "Skyline Corporate Interiors", "ar": "الديكورات الداخلية للشركات" },
-      "category": "interior",
+      "category": "commercial",
       "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
       "description": {
         "en": "Modern, minimalist interior design for a tech headquarters. The space features open-plan work areas, acoustic meeting pods, and biophilic design elements to enhance employee well-being.",
@@ -336,7 +342,7 @@
     {
       "id": "p5",
       "title": { "en": "Urban Cultural Center", "ar": "المركز الثقافي الحضري" },
-      "category": "architectural",
+      "category": "educational",
       "image": "https://images.unsplash.com/photo-1470723710355-95304d8aece4?auto=format&fit=crop&w=1200&q=80",
       "description": {
         "en": "An architectural landmark designed to host community events and art exhibitions. The geometric facade is inspired by traditional Palestinian embroidery patterns reimagined in modern materials.",
@@ -355,7 +361,7 @@
     {
       "id": "p6",
       "title": { "en": "Highway Interchange Bridge", "ar": "جسر تقاطع الطريق السريع" },
-      "category": "structural",
+      "category": "infrastructure",
       "image": "https://images.unsplash.com/photo-1435575653489-b0873ec954e2?auto=format&fit=crop&w=1200&q=80",
       "description": {
         "en": "Structural engineering for a high-traffic interchange. The design focuses on seismic resistance and long-span post-tensioned concrete beams to minimize columns and maximize clearance.",
@@ -369,6 +375,46 @@
          "https://images.unsplash.com/photo-1545459720-aac3e5ca0a24?auto=format&fit=crop&w=1200&q=80",
          "https://images.unsplash.com/photo-1513828583688-632910811a08?auto=format&fit=crop&w=1200&q=80",
          "https://images.unsplash.com/photo-1465446604801-351af6600c49?auto=format&fit=crop&w=1200&q=80"
+      ]
+    },
+    {
+      "id": "p7",
+      "title": { "en": "Al-Nour Grand Mosque Expansion", "ar": "مشروع توسعة جامع النور الكبير" },
+      "category": "religious",
+      "image": "https://images.unsplash.com/photo-1545153518-d7843311416b?auto=format&fit=crop&w=1200&q=80",
+      "description": {
+        "en": "A comprehensive expansion project for Al-Nour Grand Mosque, integrating traditional Islamic architecture with modern structural solutions. The project includes a new minaret, an expanded prayer hall with a large span dome supported by reinforced concrete ring beams, and a complete renovation of the courtyard.",
+        "ar": "مشروع توسعة شامل لجامع النور الكبير، يدمج العمارة الإسلامية التقليدية مع الحلول الإنشائية الحديثة. يشمل المشروع مئذنة جديدة، وقاعة صلاة موسعة بقبة كبيرة الامتداد مدعومة بعوارض حلقية من الخرسانة المسلحة، وتجديدًا كاملاً للفناء."
+      },
+      "client": { "en": "Awqaf Ministry", "ar": "وزارة الأوقاف" },
+      "location": { "en": "Nablus, Palestine", "ar": "نابلس، فلسطين" },
+      "year": "2023",
+      "gallery": [
+         "https://images.unsplash.com/photo-1545153518-d7843311416b?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1580794966459-2a1a0e37d029?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=1200&q=80"
+      ]
+    },
+    {
+      "id": "p8",
+      "title": { "en": "Northern Logistics Center Construction", "ar": "إنشاء مركز الشمال اللوجستي" },
+      "category": "industrial",
+      "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+      "description": {
+        "en": "Design and construction of a large-scale logistics center featuring high-bay warehousing and automated distribution systems. The structural design utilizes long-span steel trusses to create column-free interior zones, optimized via BIM for efficient material handling and storage capacity.",
+        "ar": "تصميم وإنشاء مركز لوجستي واسع النطاق يضم مستودعات عالية الارتفاع وأنظمة توزيع آلية. يستخدم التصميم الإنشائي دعامات فولاذية طويلة المدى لإنشاء مناطق داخلية خالية من الأعمدة، تم تحسينها عبر BIM لكفاءة مناولة المواد وسعة التخزين."
+      },
+      "client": { "en": "Industrial Investment Group", "ar": "مجموعة الاستثمار الصناعي" },
+      "location": { "en": "Jenin Industrial Zone", "ar": "منطقة جنين الصناعية" },
+      "year": "2024",
+      "gallery": [
+         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
+         "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80"
       ]
     }
   ]

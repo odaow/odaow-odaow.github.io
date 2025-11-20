@@ -1,13 +1,14 @@
+
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useData } from '../context/DataContext';
 import { 
-  Building, PencilRuler, Sofa, Cuboid, Route, Briefcase, Calculator, Lightbulb 
+  Building, PencilRuler, Sofa, Cuboid, Route, Briefcase, Calculator, Lightbulb, Trees
 } from 'lucide-react';
 
 // Icon mapping
 const iconMap: { [key: string]: React.ElementType } = {
-  Building, PencilRuler, Sofa, Cuboid, Route, Briefcase, Calculator, Lightbulb
+  Building, PencilRuler, Sofa, Cuboid, Route, Briefcase, Calculator, Lightbulb, Trees
 };
 
 const Services: React.FC = () => {
