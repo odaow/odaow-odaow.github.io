@@ -1,4 +1,3 @@
-
 backend:
   name: git-gateway
   branch: main
@@ -14,43 +13,106 @@ collections:
         label: "Global Content"
         name: "content"
         fields:
-          - { label: "Services", name: "services", widget: "list", fields: [
-              { label: "ID", name: "id", widget: "string" },
-              { label: "Icon Name", name: "iconName", widget: "string" },
-              { label: "Title (English)", name: "title.en", widget: "string" },
-              { label: "Title (Arabic)", name: "title.ar", widget: "string" },
-              { label: "Description (English)", name: "description.en", widget: "text" },
-              { label: "Description (Arabic)", name: "description.ar", widget: "text" }
-            ]}
-          - { label: "Team", name: "team", widget: "list", fields: [
-              { label: "Name (English)", name: "name.en", widget: "string" },
-              { label: "Name (Arabic)", name: "name.ar", widget: "string" },
-              { label: "Role (English)", name: "role.en", widget: "string" },
-              { label: "Role (Arabic)", name: "role.ar", widget: "string" },
-              { label: "Image", name: "image", widget: "image" }
-            ]}
-          - { label: "Lab Services", name: "labServices", widget: "list", fields: [
-              { label: "ID", name: "id", widget: "string" },
-              { label: "Title (English)", name: "title.en", widget: "string" },
-              { label: "Title (Arabic)", name: "title.ar", widget: "string" },
-              { label: "Category", name: "category", widget: "string" },
-              { label: "Description (English)", name: "description.en", widget: "text" },
-              { label: "Description (Arabic)", name: "description.ar", widget: "text" },
-              { label: "Image", name: "image", widget: "image", required: false }
-            ]}
-          - { label: "Lab Gallery", name: "labGallery", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
-          - { label: "Projects", name: "projects", widget: "list", fields: [
-              { label: "ID", name: "id", widget: "string" },
-              { label: "Title (English)", name: "title.en", widget: "string" },
-              { label: "Title (Arabic)", name: "title.ar", widget: "string" },
-              { label: "Category", name: "category", widget: "select", options: ["residential", "commercial", "religious", "industrial", "educational", "healthcare", "infrastructure"] },
-              { label: "Main Image", name: "image", widget: "image" },
-              { label: "Gallery", name: "gallery", widget: "list", field: { label: "Image", name: "image", widget: "image" } },
-              { label: "Description (English)", name: "description.en", widget: "text" },
-              { label: "Description (Arabic)", name: "description.ar", widget: "text" },
-              { label: "Client (English)", name: "client.en", widget: "string", required: false },
-              { label: "Client (Arabic)", name: "client.ar", widget: "string", required: false },
-              { label: "Location (English)", name: "location.en", widget: "string", required: false },
-              { label: "Location (Arabic)", name: "location.ar", widget: "string", required: false },
-              { label: "Completion Year", name: "year", widget: "string", required: false }
-            ]}
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Icon Name", name: "iconName", widget: "string" }
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Arabic", name: "ar", widget: "text" }
+          
+          - label: "Team"
+            name: "team"
+            widget: "list"
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - label: "Role"
+                name: "role"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+
+          - label: "Lab Services"
+            name: "labServices"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Arabic", name: "ar", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+
+          - label: "Lab Gallery"
+            name: "labGallery"
+            widget: "list"
+            field: { label: "Image", name: "image", widget: "image" }
+
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["residential", "commercial", "religious", "industrial", "educational", "healthcare", "infrastructure"]
+              - { label: "Main Image", name: "image", widget: "image" }
+              - label: "Gallery"
+                name: "gallery"
+                widget: "list"
+                field: { label: "Image", name: "image", widget: "image" }
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Arabic", name: "ar", widget: "text" }
+              - label: "Client"
+                name: "client"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - label: "Location"
+                name: "location"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - { label: "Completion Year", name: "year", widget: "string", required: false }
