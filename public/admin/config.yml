@@ -13,12 +13,184 @@ collections:
         label: "Global Content"
         name: "content"
         fields:
+          # General Site Settings (Translations)
+          - label: "General Settings & Translations"
+            name: "translations"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "English"
+                name: "en"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - label: "Navigation"
+                    name: "nav"
+                    widget: "object"
+                    fields:
+                      - { label: "Home", name: "home", widget: "string" }
+                      - { label: "About", name: "about", widget: "string" }
+                      - { label: "Services", name: "services", widget: "string" }
+                      - { label: "Projects", name: "projects", widget: "string" }
+                      - { label: "Lab", name: "lab", widget: "string" }
+                      - { label: "Contact", name: "contact", widget: "string" }
+                  - label: "Home Page"
+                    name: "home"
+                    widget: "object"
+                    fields:
+                      - { label: "Hero Title", name: "heroTitle", widget: "text" }
+                      - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+                      - { label: "Quote", name: "quote", widget: "string" }
+                      - { label: "Founded Text", name: "since", widget: "string" }
+                      - { label: "CTA Project", name: "ctaProject", widget: "string" }
+                      - { label: "CTA Services", name: "ctaServices", widget: "string" }
+                      - { label: "CTA Contact", name: "ctaContact", widget: "string" }
+                  - label: "Contact Info"
+                    name: "contact"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Address", name: "address", widget: "string" }
+                      - { label: "Phone Label", name: "phone", widget: "string" }
+                      - { label: "WhatsApp Label", name: "whatsapp", widget: "string" }
+                      - { label: "Email Label", name: "email", widget: "string" }
+                      - { label: "Location Label", name: "location", widget: "string" }
+                  - label: "About Page Text"
+                    name: "about"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Story Title", name: "storyTitle", widget: "string" }
+                      - { label: "Story Text", name: "storyText", widget: "text" }
+                      - { label: "Team Title", name: "teamTitle", widget: "string" }
+                  - label: "Services Text"
+                    name: "services"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "text" }
+                  - label: "Projects Text"
+                    name: "projects"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Filter All", name: "filterAll", widget: "string" }
+                      - { label: "View Details", name: "viewDetails", widget: "string" }
+                      - { label: "Project Info", name: "projectInfo", widget: "string" }
+                      - { label: "Client", name: "client", widget: "string" }
+                      - { label: "Location", name: "location", widget: "string" }
+                      - { label: "Year", name: "year", widget: "string" }
+                      - { label: "Category", name: "category", widget: "string" }
+                      - { label: "Back Button", name: "backToProjects", widget: "string" }
+                  - label: "Lab Text"
+                    name: "lab"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Subtitle", name: "subtitle", widget: "text" }
+                      - { label: "Services Title", name: "servicesTitle", widget: "string" }
+                      - { label: "Accreditation Title", name: "accreditationTitle", widget: "string" }
+                      - { label: "Accreditation Text", name: "accreditationText", widget: "text" }
+                      - { label: "Gallery Title", name: "galleryTitle", widget: "string" }
+                      - { label: "CTA Button", name: "ctaButton", widget: "string" }
+                      - { label: "Request Test Title", name: "requestTestTitle", widget: "string" }
+                  - label: "Common"
+                    name: "common"
+                    widget: "object"
+                    fields:
+                      - { label: "Read More", name: "readMore", widget: "string" }
+                      - { label: "Copyright", name: "copyright", widget: "string" }
+
+              - label: "Arabic"
+                name: "ar"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - label: "Navigation"
+                    name: "nav"
+                    widget: "object"
+                    fields:
+                      - { label: "Home", name: "home", widget: "string" }
+                      - { label: "About", name: "about", widget: "string" }
+                      - { label: "Services", name: "services", widget: "string" }
+                      - { label: "Projects", name: "projects", widget: "string" }
+                      - { label: "Lab", name: "lab", widget: "string" }
+                      - { label: "Contact", name: "contact", widget: "string" }
+                  - label: "Home Page"
+                    name: "home"
+                    widget: "object"
+                    fields:
+                      - { label: "Hero Title", name: "heroTitle", widget: "text" }
+                      - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+                      - { label: "Quote", name: "quote", widget: "string" }
+                      - { label: "Founded Text", name: "since", widget: "string" }
+                      - { label: "CTA Project", name: "ctaProject", widget: "string" }
+                      - { label: "CTA Services", name: "ctaServices", widget: "string" }
+                      - { label: "CTA Contact", name: "ctaContact", widget: "string" }
+                  - label: "Contact Info"
+                    name: "contact"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Address", name: "address", widget: "string" }
+                      - { label: "Phone Label", name: "phone", widget: "string" }
+                      - { label: "WhatsApp Label", name: "whatsapp", widget: "string" }
+                      - { label: "Email Label", name: "email", widget: "string" }
+                      - { label: "Location Label", name: "location", widget: "string" }
+                  - label: "About Page Text"
+                    name: "about"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Story Title", name: "storyTitle", widget: "string" }
+                      - { label: "Story Text", name: "storyText", widget: "text" }
+                      - { label: "Team Title", name: "teamTitle", widget: "string" }
+                  - label: "Services Text"
+                    name: "services"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Description", name: "description", widget: "text" }
+                  - label: "Projects Text"
+                    name: "projects"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Filter All", name: "filterAll", widget: "string" }
+                      - { label: "View Details", name: "viewDetails", widget: "string" }
+                      - { label: "Project Info", name: "projectInfo", widget: "string" }
+                      - { label: "Client", name: "client", widget: "string" }
+                      - { label: "Location", name: "location", widget: "string" }
+                      - { label: "Year", name: "year", widget: "string" }
+                      - { label: "Category", name: "category", widget: "string" }
+                      - { label: "Back Button", name: "backToProjects", widget: "string" }
+                  - label: "Lab Text"
+                    name: "lab"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Subtitle", name: "subtitle", widget: "text" }
+                      - { label: "Services Title", name: "servicesTitle", widget: "string" }
+                      - { label: "Accreditation Title", name: "accreditationTitle", widget: "string" }
+                      - { label: "Accreditation Text", name: "accreditationText", widget: "text" }
+                      - { label: "Gallery Title", name: "galleryTitle", widget: "string" }
+                      - { label: "CTA Button", name: "ctaButton", widget: "string" }
+                      - { label: "Request Test Title", name: "requestTestTitle", widget: "string" }
+                  - label: "Common"
+                    name: "common"
+                    widget: "object"
+                    fields:
+                      - { label: "Read More", name: "readMore", widget: "string" }
+                      - { label: "Copyright", name: "copyright", widget: "string" }
+
+          # Services Collection
           - label: "Services"
             name: "services"
             widget: "list"
+            collapsed: true
             fields:
               - { label: "ID", name: "id", widget: "string" }
-              - { label: "Icon Name", name: "iconName", widget: "string" }
+              - { label: "Icon Name (Lucide)", name: "iconName", widget: "string" }
               - label: "Title"
                 name: "title"
                 widget: "object"
@@ -31,11 +203,14 @@ collections:
                 fields:
                   - { label: "English", name: "en", widget: "text" }
                   - { label: "Arabic", name: "ar", widget: "text" }
-          
+
+          # Team Collection
           - label: "Team"
             name: "team"
             widget: "list"
+            collapsed: true
             fields:
+              - { label: "ID", name: "id", widget: "string" }
               - label: "Name"
                 name: "name"
                 widget: "object"
@@ -48,11 +223,13 @@ collections:
                 fields:
                   - { label: "English", name: "en", widget: "string" }
                   - { label: "Arabic", name: "ar", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Profile Image", name: "image", widget: "image" }
 
+          # Lab Services Collection
           - label: "Lab Services"
             name: "labServices"
             widget: "list"
+            collapsed: true
             fields:
               - { label: "ID", name: "id", widget: "string" }
               - label: "Title"
@@ -61,23 +238,26 @@ collections:
                 fields:
                   - { label: "English", name: "en", widget: "string" }
                   - { label: "Arabic", name: "ar", widget: "string" }
-              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Category Key", name: "category", widget: "string" }
               - label: "Description"
                 name: "description"
                 widget: "object"
                 fields:
                   - { label: "English", name: "en", widget: "text" }
                   - { label: "Arabic", name: "ar", widget: "text" }
-              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Service Image", name: "image", widget: "image", required: false }
 
+          # Lab Gallery Collection (Simple list of images)
           - label: "Lab Gallery"
             name: "labGallery"
             widget: "list"
-            field: { label: "Image", name: "image", widget: "image" }
+            field: { label: "Image", widget: "image" }
 
+          # Projects Collection
           - label: "Projects"
             name: "projects"
             widget: "list"
+            collapsed: true
             fields:
               - { label: "ID", name: "id", widget: "string" }
               - label: "Title"
@@ -91,10 +271,10 @@ collections:
                 widget: "select"
                 options: ["residential", "commercial", "religious", "industrial", "educational", "healthcare", "infrastructure"]
               - { label: "Main Image", name: "image", widget: "image" }
-              - label: "Gallery"
+              - label: "Gallery (Additional Images)"
                 name: "gallery"
                 widget: "list"
-                field: { label: "Image", name: "image", widget: "image" }
+                field: { label: "Image", widget: "image" }
               - label: "Description"
                 name: "description"
                 widget: "object"
