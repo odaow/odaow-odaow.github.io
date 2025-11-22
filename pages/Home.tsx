@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
@@ -14,9 +15,9 @@ const Home: React.FC = () => {
     <div className="relative w-full overflow-hidden">
       {/* Hero Section */}
       <div className="min-h-[90vh] flex items-center bg-white relative">
-        {/* Abstract Background Shape */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-50 hidden md:block clip-diagonal"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#4A7C59]/5 rounded-full blur-3xl"></div>
+        {/* Abstract Background Shape - using end-0 to flip automatically */}
+        <div className="absolute top-0 end-0 w-1/2 h-full bg-gray-50 hidden md:block clip-diagonal"></div>
+        <div className="absolute bottom-0 start-0 w-64 h-64 bg-[#4A7C59]/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -58,7 +59,8 @@ const Home: React.FC = () => {
                 alt="Modern Architecture"
                 className="w-full h-full object-cover rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
                />
-               <div className="absolute -bottom-10 -left-10 bg-white p-6 rounded-lg shadow-xl max-w-xs border-l-4 border-[#4A7C59]">
+               {/* Quote Box - using border-s-4 (border-start) for correct RTL placement */}
+               <div className="absolute -bottom-10 start-[-40px] bg-white p-6 rounded-lg shadow-xl max-w-xs border-s-4 border-[#4A7C59]">
                  <p className="text-gray-600 italic">"{t.home.quote}"</p>
                </div>
             </div>

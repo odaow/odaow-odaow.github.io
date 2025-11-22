@@ -29,15 +29,15 @@ const Projects: React.FC = () => {
           {/* Advanced Filtering System */}
           <div className="w-full">
             
-            {/* Mobile View: Styled Select Dropdown */}
+            {/* Mobile View: Styled Select Dropdown with Logical Properties */}
             <div className="md:hidden relative w-full">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-[#4A7C59] rtl:left-auto rtl:right-0 rtl:pl-0 rtl:pr-3">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-[#4A7C59]">
                 <Filter size={18} />
               </div>
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
-                className="block w-full pl-10 pr-4 rtl:pl-4 rtl:pr-10 py-3 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4A7C59] focus:border-transparent sm:text-sm rounded-lg bg-gray-50 text-gray-900 appearance-none"
+                className="block w-full ps-10 pe-10 py-3 text-base border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4A7C59] focus:border-transparent sm:text-sm rounded-lg bg-gray-50 text-gray-900 appearance-none"
               >
                 {PROJECT_CATEGORIES.map((cat) => (
                   <option key={cat.id} value={cat.id}>
@@ -45,8 +45,8 @@ const Projects: React.FC = () => {
                   </option>
                 ))}
               </select>
-              {/* Custom Arrow for consistent look */}
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 rtl:right-auto rtl:left-0">
+              {/* Custom Arrow aligned to end */}
+              <div className="pointer-events-none absolute inset-y-0 end-0 flex items-center pe-3 text-gray-700">
                 <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
                 </svg>
