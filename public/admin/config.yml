@@ -247,11 +247,11 @@ collections:
                   - { label: "Arabic", name: "ar", widget: "text" }
               - { label: "Service Image", name: "image", widget: "image", required: false }
 
-          # Lab Gallery Collection (Simple list of images)
+          # Lab Gallery Collection (Corrected)
           - label: "Lab Gallery"
             name: "labGallery"
             widget: "list"
-            field: { label: "Image", widget: "image" }
+            field: { label: "Image", name: "image", widget: "image" }
 
           # Projects Collection
           - label: "Projects"
@@ -274,7 +274,7 @@ collections:
               - label: "Gallery (Additional Images)"
                 name: "gallery"
                 widget: "list"
-                field: { label: "Image", widget: "image" }
+                field: { label: "Image", name: "image", widget: "image" }
               - label: "Description"
                 name: "description"
                 widget: "object"
