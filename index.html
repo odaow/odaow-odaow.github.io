@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Al-Nabras Engineering Office</title>
     <meta name="description" content="Al-Nabras Engineering Office - Precision Engineering & Innovative Design in Tubas, Palestine." />
+    <!-- Essential for Netlify CMS Auth Redirects -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom Scrollbar for minimal aesthetic */
@@ -37,5 +39,16 @@
 </head>
   <body class="bg-gray-50 text-gray-900 antialiased">
     <div id="root"></div>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
