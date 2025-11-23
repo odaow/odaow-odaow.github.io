@@ -247,7 +247,7 @@ collections:
                   - { label: "Arabic", name: "ar", widget: "text" }
               - { label: "Service Image", name: "image", widget: "image", required: false }
 
-          # Lab Gallery Collection (Corrected)
+          # Lab Gallery Collection
           - label: "Lab Gallery"
             name: "labGallery"
             widget: "list"
