@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { useData } from '../context/DataContext';
-import { ArrowLeft, ArrowRight, Calendar, MapPin, User, Tag, Grid } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, MapPin, User, Tag } from 'lucide-react';
 import { PROJECT_CATEGORIES } from '../constants';
+import SEO from '../components/SEO';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,12 +23,21 @@ const ProjectDetail: React.FC = () => {
 
   const gallery = [project.image, ...(project.gallery || [])].filter((v, i, a) => a.indexOf(v) === i);
   const BackIcon = dir === 'rtl' ? ArrowRight : ArrowLeft;
-
-  // Helper to get proper label for category
   const categoryLabel = PROJECT_CATEGORIES.find(c => c.id === project.category)?.label[lang] || project.category;
+
+  // Prepare SEO description
+  const metaDesc = project.description 
+    ? project.description[lang].substring(0, 150) + "..." 
+    : t.projects.projectInfo;
 
   return (
     <div className="py-16 bg-gray-50 min-h-screen">
+      <SEO 
+        page="project-detail" 
+        title={project.title[lang]} 
+        description={metaDesc}
+        image={project.image}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumb & Nav */}
@@ -58,7 +68,6 @@ const ProjectDetail: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">
-           
            {/* Left Column: Gallery */}
            <div className="lg:col-span-2 space-y-4">
               <div className="aspect-video w-full rounded-xl overflow-hidden shadow-sm bg-gray-200 border border-gray-100">
@@ -68,7 +77,6 @@ const ProjectDetail: React.FC = () => {
                    className="w-full h-full object-cover transition-all duration-500"
                  />
               </div>
-              
               {/* Thumbnails */}
               {gallery.length > 1 && (
                 <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
@@ -89,8 +97,6 @@ const ProjectDetail: React.FC = () => {
 
            {/* Right Column: Details */}
            <div className="space-y-8">
-             
-             {/* Info Card */}
              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                <h3 className="font-bold text-gray-900 text-lg mb-4 border-b border-gray-100 pb-2">
                  {t.projects.projectInfo}
@@ -133,22 +139,14 @@ const ProjectDetail: React.FC = () => {
                </ul>
              </div>
 
-             {/* Description */}
              <div>
                <h3 className="font-bold text-gray-900 text-lg mb-3">{t.about.storyTitle}</h3>
                <div className="prose prose-green max-w-none text-gray-600 leading-relaxed">
-                 <p>
-                   {project.description 
-                     ? project.description[lang] 
-                     : t.about.storyText.substring(0, 150) + "..." // Fallback
-                   }
-                 </p>
+                 <p>{project.description ? project.description[lang] : t.about.storyText}</p>
                </div>
              </div>
-
            </div>
         </div>
-
       </div>
     </div>
   );

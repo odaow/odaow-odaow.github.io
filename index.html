@@ -1,60 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Al-Nabras Engineering Office</title>
-  <meta name="description"
-    content="Al-Nabras Engineering Office - Precision Engineering & Innovative Design in Tubas, Palestine." />
-
-  <!-- Essential for Netlify CMS Auth Redirects -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    /* Custom Scrollbar for minimal aesthetic */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #4A7C59;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3a6346;
-    }
-  </style>
-</head>
-
-<body class="bg-gray-50 text-gray-900 antialiased">
-  <div id="root"></div>
-
-  <!-- Vite Entry Point -->
-  <script type="module" src="/index.tsx"></script>
-
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al-Nabras Engineering Office</title>
+    <meta name="description" content="Al-Nabras Engineering Office - Precision Engineering & Innovative Design in Tubas, Palestine." />
+    
+    <!-- Essential for Netlify CMS Auth Redirects -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      /* Custom Scrollbar for minimal aesthetic */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4A7C59;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3a6346;
+      }
+    </style>
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EngineeringService",
+      "name": "Nebras Engineering Office",
+      "alternateName": "مكتب النبراس الهندسي",
+      "url": "https://nebras-bim.com",
+      "logo": "https://nebras-bim.com/logo.png",
+      "description": "Leading engineering consultancy in Palestine specializing in BIM, Civil Engineering, and Architecture.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Main Street",
+        "addressLocality": "Tubas",
+        "addressCountry": "PS"
+      },
+      "telephone": "+970569628237",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Saturday"
+          ],
+          "opens": "08:00",
+          "closes": "16:00"
         }
-      });
-      // Ensure widget is initialized
-      window.netlifyIdentity.init();
+      ]
     }
-  </script>
-</body>
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-helmet-async": "https://aistudiocdn.com/react-helmet-async@^2.0.5",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-900 antialiased">
+    <div id="root"></div>
+    
+    <!-- Vite Entry Point -->
+    <script type="module" src="/index.tsx"></script>
 
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+        // Ensure widget is initialized
+        window.netlifyIdentity.init();
+      }
+    </script>
+  </body>
 </html>

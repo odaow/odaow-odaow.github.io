@@ -94,13 +94,6 @@ collections:
                       - { label: "Gallery Title", name: "galleryTitle", widget: "string" }
                       - { label: "CTA Button", name: "ctaButton", widget: "string" }
                       - { label: "Request Test Title", name: "requestTestTitle", widget: "string" }
-                  - label: "VIP Services Text"
-                    name: "vip"
-                    widget: "object"
-                    fields:
-                      - { label: "Title", name: "title", widget: "string" }
-                      - { label: "Subtitle", name: "subtitle", widget: "text" }
-                      - { label: "CTA Contact", name: "ctaContact", widget: "string" }
                   - label: "Common"
                     name: "common"
                     widget: "object"
@@ -183,13 +176,6 @@ collections:
                       - { label: "Gallery Title", name: "galleryTitle", widget: "string" }
                       - { label: "CTA Button", name: "ctaButton", widget: "string" }
                       - { label: "Request Test Title", name: "requestTestTitle", widget: "string" }
-                  - label: "VIP Services Text"
-                    name: "vip"
-                    widget: "object"
-                    fields:
-                      - { label: "Title", name: "title", widget: "string" }
-                      - { label: "Subtitle", name: "subtitle", widget: "text" }
-                      - { label: "CTA Contact", name: "ctaContact", widget: "string" }
                   - label: "Common"
                     name: "common"
                     widget: "object"
@@ -266,27 +252,6 @@ collections:
             name: "labGallery"
             widget: "list"
             field: { label: "Image", name: "image", widget: "image" }
-
-          # VIP Services Collection
-          - label: "VIP Services"
-            name: "vipServices"
-            widget: "list"
-            collapsed: true
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - label: "Title"
-                name: "title"
-                widget: "object"
-                fields:
-                  - { label: "English", name: "en", widget: "string" }
-                  - { label: "Arabic", name: "ar", widget: "string" }
-              - label: "Description"
-                name: "description"
-                widget: "object"
-                fields:
-                  - { label: "English", name: "en", widget: "text" }
-                  - { label: "Arabic", name: "ar", widget: "text" }
-              - { label: "Service Image", name: "image", widget: "image" }
 
           # Projects Collection
           - label: "Projects"

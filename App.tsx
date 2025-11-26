@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './context/LanguageContext';
 import { DataProvider } from './context/DataContext';
 import Layout from './components/Layout';
@@ -11,28 +11,31 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import Lab from './pages/Lab';
-import VipServices from './pages/VipServices';
+import SEO from './components/SEO';
 
 const App: React.FC = () => {
   return (
-    <DataProvider>
-      <LanguageProvider>
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="services" element={<Services />} />
-              <Route path="vip-services" element={<VipServices />} />
-              <Route path="projects" element={<Projects />} />
-              <Route path="projects/:id" element={<ProjectDetail />} />
-              <Route path="lab" element={<Lab />} />
-              <Route path="contact" element={<Contact />} />
-            </Route>
-          </Routes>
-        </HashRouter>
-      </LanguageProvider>
-    </DataProvider>
+    <HelmetProvider>
+      <DataProvider>
+        <LanguageProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route index element={<><SEO page="home" /><Home /></>} />
+                <Route path="about" element={<><SEO page="about" /><About /></>} />
+                <Route path="services" element={<><SEO page="services" /><Services /></>} />
+                <Route path="projects" element={<><SEO page="projects" /><Projects /></>} />
+                <Route path="projects/:id" element={<ProjectDetail />} />
+                <Route path="lab" element={<><SEO page="lab" /><Lab /></>} />
+                <Route path="contact" element={<><SEO page="contact" /><Contact /></>} />
+                {/* Catch-all route to redirect 404s to home */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </LanguageProvider>
+      </DataProvider>
+    </HelmetProvider>
   );
 };
 
