@@ -1,5 +1,4 @@
-
-import { Translation, ServiceItem, TeamMember, ProjectItem, LabServiceItem } from './types';
+import { Translation, ServiceItem, TeamMember, ProjectItem, LabServiceItem, VipServiceItem } from './types';
 
 export const DEFAULT_CONTENT = {
   en: {
@@ -9,13 +8,13 @@ export const DEFAULT_CONTENT = {
       services: "Services",
       projects: "Projects",
       lab: "The Lab",
-      contact: "Contact Us"
+      contact: "Contact Us",
+      vip: "VIP Services"
     },
-    home: {
-      heroTitle: "Precision Engineering.\nInnovative Design.",
-      heroSubtitle: "Nebras Engineering Office delivers excellence in architectural and civil engineering solutions across Palestine.",
-      ctaProject: "View Projects",
-      ctaServices: "Our Services",
+    hero: {
+      title: "Nebras Engineering Office",
+      subtitle: "Excellence in Engineering & Design",
+      ctaProjects: "View Projects",
       ctaContact: "Get in Touch",
       quote: "Building the future with precision and passion.",
       since: "Since 2006"
@@ -44,20 +43,26 @@ export const DEFAULT_CONTENT = {
     lab: {
       title: "ALSHAMAL LABORATORIES",
       subtitle: "Providing certified material testing and quality control services for the construction industry.",
-      servicesTitle: "Laboratory Services",
-      accreditationTitle: "Accreditation & Quality",
-      accreditationText: "Al-Shamal Laboratories are fully accredited by the Palestinian Engineers Association and adhere to strict international standards (ASTM, BS). We utilize calibrated state-of-the-art equipment to ensure precise results for soil, concrete, and asphalt testing, guaranteeing the structural integrity of your projects.",
-      galleryTitle: "Lab Gallery",
-      ctaButton: "Request a Test Now",
-      requestTestTitle: "Ready to test your materials?"
+      ctaContact: "Contact Lab",
+      servicesTitle: "Lab Services",
+      accreditationTitle: "Accreditation",
+      accreditationText: "Our lab is fully accredited and follows international standards.",
+      galleryTitle: "Gallery",
+      ctaButton: "Contact Us",
+      requestTestTitle: "Request a Test"
     },
     contact: {
       title: "Contact Us",
-      address: "Main Street, Tubas, Palestine",
-      phone: "Phone",
-      whatsapp: "WhatsApp",
-      email: "Email",
-      location: "Our Location"
+      address: "Tubas, Palestine",
+      phone: "+970 123 456 789",
+      whatsapp: "+970 123 456 789",
+      email: "info@nebras.com",
+      location: "Location Map"
+    },
+    vip: {
+      title: "VIP Services",
+      subtitle: "Exclusive engineering solutions for our most distinguished clients.",
+      ctaContact: "Request VIP Service"
     },
     common: {
       readMore: "Read More",
@@ -71,13 +76,13 @@ export const DEFAULT_CONTENT = {
       services: "خدماتنا",
       projects: "مشاريعنا",
       lab: "المختبر",
-      contact: "اتصل بنا"
+      contact: "اتصل بنا",
+      vip: "خدمات VIP"
     },
-    home: {
-      heroTitle: "هندسة دقيقة.\nتصميم مبتكر.",
-      heroSubtitle: "يقدم مكتب النبراس الهندسي التميز في الحلول المعمارية والهندسة المدنية في جميع أنحاء فلسطين.",
-      ctaProject: "عرض المشاريع",
-      ctaServices: "خدماتنا",
+    hero: {
+      title: "مكتب النبراس الهندسي",
+      subtitle: "التميز في الهندسة والتصميم",
+      ctaProjects: "عرض المشاريع",
       ctaContact: "تواصل معنا",
       quote: "نصنع المستقبل بدقة وشغف.",
       since: "منذ عام 2006"
@@ -104,22 +109,28 @@ export const DEFAULT_CONTENT = {
       backToProjects: "العودة للمشاريع"
     },
     lab: {
-      title: "مختبرات الشمال الإنشائية",
-      subtitle: "توفير خدمات فحص المواد ومراقبة الجودة المعتمدة لصناعة البناء والإنشاءات.",
+      title: "مختبرات الشمال",
+      subtitle: "تقديم خدمات فحص المواد ومراقبة الجودة المعتمدة لقطاع الإنشاءات.",
+      ctaContact: "تواصل مع المختبر",
       servicesTitle: "خدمات المختبر",
-      accreditationTitle: "الاعتماد والجودة",
-      accreditationText: "مختبرات الشمال معتمدة بالكامل من نقابة المهندسين الفلسطينيين وتلتزم بالمعايير الدولية الصارمة (ASTM, BS). نستخدم أحدث المعدات المعايرة لضمان نتائج دقيقة لفحوصات التربة والخرسانة والأسفلت، مما يضمن السلامة الإنشائية لمشاريعكم.",
-      galleryTitle: "معرض صور المختبر",
-      ctaButton: "طلب فحص الآن",
-      requestTestTitle: "جاهز لفحص مواد مشروعك؟"
+      accreditationTitle: "الاعتماد",
+      accreditationText: "مختبرنا معتمد بالكامل ويتبع المعايير الدولية.",
+      galleryTitle: "معرض الصور",
+      ctaButton: "تواصل معنا",
+      requestTestTitle: "طلب فحص"
     },
     contact: {
       title: "اتصل بنا",
-      address: "الشارع الرئيسي، طوباس، فلسطين",
-      phone: "هاتف",
-      whatsapp: "واتساب",
-      email: "البريد الإلكتروني",
-      location: "موقعنا"
+      address: "طوباس، فلسطين",
+      phone: "+970 123 456 789",
+      whatsapp: "+970 123 456 789",
+      email: "info@nebras.com",
+      location: "خريطة الموقع"
+    },
+    vip: {
+      title: "خدمات VIP",
+      subtitle: "حلول هندسية حصرية لعملائنا المميزين.",
+      ctaContact: "طلب خدمة VIP"
     },
     common: {
       readMore: "اقرأ المزيد",
@@ -212,7 +223,6 @@ export const DEFAULT_TEAM: TeamMember[] = [
   }
 ];
 
-// Updated Filter Categories based on Building Types
 export const PROJECT_CATEGORIES = [
   { id: 'all', label: { en: "All Projects", ar: "جميع المشاريع" } },
   { id: 'residential', label: { en: "Residential", ar: "سكني" } },
@@ -224,7 +234,6 @@ export const PROJECT_CATEGORIES = [
   { id: 'infrastructure', label: { en: "Infrastructure", ar: "تطوير البنية التحتية" } }
 ];
 
-// Categories: 'residential', 'commercial', 'religious', 'industrial', 'educational', 'healthcare', 'infrastructure'
 export const DEFAULT_PROJECTS: ProjectItem[] = [
   {
     id: 'p1',
@@ -315,10 +324,10 @@ export const DEFAULT_PROJECTS: ProjectItem[] = [
     location: { en: "Jenin, Palestine", ar: "جنين، فلسطين" },
     year: "2022",
     gallery: [
-       "https://images.unsplash.com/photo-1470723710355-95304d8aece4?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1470723710355-95304d8aece4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80"
     ]
   },
   {
@@ -334,10 +343,10 @@ export const DEFAULT_PROJECTS: ProjectItem[] = [
     location: { en: "Hebron, Palestine", ar: "الخليل، فلسطين" },
     year: "2023",
     gallery: [
-       "https://images.unsplash.com/photo-1435575653489-b0873ec954e2?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1545459720-aac3e5ca0a24?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1513828583688-632910811a08?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1465446604801-351af6600c49?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1435575653489-b0873ec954e2?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1545459720-aac3e5ca0a24?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1513828583688-632910811a08?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1465446604801-351af6600c49?auto=format&fit=crop&w=1200&q=80"
     ]
   },
   {
@@ -353,11 +362,11 @@ export const DEFAULT_PROJECTS: ProjectItem[] = [
     location: { en: "Nablus, Palestine", ar: "نابلس، فلسطين" },
     year: "2023",
     gallery: [
-       "https://images.unsplash.com/photo-1545153518-d7843311416b?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1580794966459-2a1a0e37d029?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1545153518-d7843311416b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1580794966459-2a1a0e37d029?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=1200&q=80"
     ]
   },
   {
@@ -373,11 +382,11 @@ export const DEFAULT_PROJECTS: ProjectItem[] = [
     location: { en: "Jenin Industrial Zone", ar: "منطقة جنين الصناعية" },
     year: "2024",
     gallery: [
-       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
-       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80"
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80"
     ]
   }
 ];
@@ -436,4 +445,43 @@ export const DEFAULT_LAB_GALLERY: string[] = [
   "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1516937941348-c0331b32d543?auto=format&fit=crop&w=800&q=80"
+];
+
+export const DEFAULT_VIP_SERVICES: VipServiceItem[] = [
+  {
+    id: "vr-visualization",
+    title: { en: "Advanced VR and 360° Visualization", ar: "الواقع الافتراضي والتصور 360 درجة" },
+    description: {
+      en: "Experience your project before it's built with our immersive VR tours and high-resolution 360° panoramic views, accessible on any device.",
+      ar: "عش تجربة مشروعك قبل بنائه مع جولات الواقع الافتراضي الغامرة والمناظر البانورامية بدقة 360 درجة، المتاحة على أي جهاز."
+    },
+    image: "https://images.unsplash.com/photo-1626379953822-baec19c3accd?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "3d-models",
+    title: { en: "Premium 3D Printed Miniature Models", ar: "نماذج مصغرة مطبوعة ثلاثية الأبعاد" },
+    description: {
+      en: "Physical realization of your architectural vision using state-of-the-art 3D printing technology, delivering precise and detailed miniature models.",
+      ar: "تجسيد مادي لرؤيتك المعمارية باستخدام أحدث تقنيات الطباعة ثلاثية الأبعاد، لتقديم نماذج مصغرة دقيقة ومفصلة."
+    },
+    image: "https://images.unsplash.com/photo-1633362623348-16078397c432?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "luxury-book",
+    title: { en: "Luxury Design and Documentation Book", ar: "كتاب توثيق وتصميم فاخر" },
+    description: {
+      en: "A professionally bound, luxury book documenting every detail of your project, from initial sketches to final plans and renderings, serving as a permanent record of excellence.",
+      ar: "كتاب فاخر مجلد بشكل احترافي يوثق كل تفاصيل مشروعك، من الرسومات الأولية إلى المخططات النهائية والتصاميم، ليكون سجلاً دائماً للتميز."
+    },
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=80"
+  },
+  {
+    id: "gov-management",
+    title: { en: "Government Licensing and Transactions Management", ar: "إدارة التراخيص والمعاملات الحكومية" },
+    description: {
+      en: "A dedicated officer to handle all government procedures, permits, and municipal approvals, ensuring a smooth, hassle-free legal process.",
+      ar: "موظف مخصص للتعامل مع جميع الإجراءات الحكومية والتصاريح والموافقات البلدية، لضمان عملية قانونية سلسة وخالية من المتاعب."
+    },
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80"
+  }
 ];

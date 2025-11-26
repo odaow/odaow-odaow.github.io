@@ -1,7 +1,6 @@
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { Translation, ServiceItem, TeamMember, ProjectItem, LabServiceItem } from '../types';
-import { DEFAULT_CONTENT, DEFAULT_SERVICES, DEFAULT_TEAM, DEFAULT_PROJECTS, DEFAULT_LAB_SERVICES, DEFAULT_LAB_GALLERY } from '../constants';
+import { Translation, ServiceItem, TeamMember, ProjectItem, LabServiceItem, VipServiceItem } from '../types';
+import { DEFAULT_CONTENT, DEFAULT_SERVICES, DEFAULT_TEAM, DEFAULT_PROJECTS, DEFAULT_LAB_SERVICES, DEFAULT_LAB_GALLERY, DEFAULT_VIP_SERVICES } from '../constants';
 
 interface SiteContent {
   translations: Record<'en' | 'ar', Translation>;
@@ -10,6 +9,7 @@ interface SiteContent {
   projects: ProjectItem[];
   labServices: LabServiceItem[];
   labGallery: string[];
+  vipServices: VipServiceItem[];
 }
 
 interface DataContextType {
@@ -26,7 +26,8 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     team: DEFAULT_TEAM,
     projects: DEFAULT_PROJECTS,
     labServices: DEFAULT_LAB_SERVICES,
-    labGallery: DEFAULT_LAB_GALLERY
+    labGallery: DEFAULT_LAB_GALLERY,
+    vipServices: DEFAULT_VIP_SERVICES
   });
   const [loading, setLoading] = useState(true);
 

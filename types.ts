@@ -8,6 +8,7 @@ export interface Translation {
     services: string;
     projects: string;
     lab: string;
+    vip: string;
     contact: string;
   };
   home: {
@@ -57,6 +58,11 @@ export interface Translation {
     whatsapp: string;
     email: string;
     location: string;
+  };
+  vip: {
+    title: string;
+    subtitle: string;
+    ctaContact: string;
   };
   common: {
     readMore: string;
@@ -126,4 +132,17 @@ export interface LabServiceItem {
   };
   category: string;
   image?: string;
+}
+
+export interface VipServiceItem {
+  id: string;
+  title: {
+    en: string;
+    ar: string;
+  };
+  description: {
+    en: string;
+    ar: string;
+  };
+  image: string;
 }

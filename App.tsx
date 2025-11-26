@@ -11,6 +11,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import Lab from './pages/Lab';
+import VipServices from './pages/VipServices';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="services" element={<Services />} />
+              <Route path="vip-services" element={<VipServices />} />
               <Route path="projects" element={<Projects />} />
               <Route path="projects/:id" element={<ProjectDetail />} />
               <Route path="lab" element={<Lab />} />
