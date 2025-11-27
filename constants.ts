@@ -1,6 +1,4 @@
 
-import { Translation, ServiceItem, TeamMember, ProjectItem, LabServiceItem } from './types';
-
 export const DEFAULT_CONTENT = {
   en: {
     nav: {
@@ -9,6 +7,7 @@ export const DEFAULT_CONTENT = {
       services: "Services",
       projects: "Projects",
       lab: "The Lab",
+      vip: "VIP Services",
       contact: "Contact Us"
     },
     home: {
@@ -51,6 +50,11 @@ export const DEFAULT_CONTENT = {
       ctaButton: "Request a Test Now",
       requestTestTitle: "Ready to test your materials?"
     },
+    vip: {
+      title: "Exclusive VIP Services",
+      subtitle: "Elevate your project experience with our premium tier services, designed for those who seek the extraordinary.",
+      ctaButton: "Inquire About VIP Access"
+    },
     contact: {
       title: "Contact Us",
       address: "Main Street, Tubas, Palestine",
@@ -71,6 +75,7 @@ export const DEFAULT_CONTENT = {
       services: "خدماتنا",
       projects: "مشاريعنا",
       lab: "المختبر",
+      vip: "خدمات VIP",
       contact: "اتصل بنا"
     },
     home: {
@@ -113,6 +118,11 @@ export const DEFAULT_CONTENT = {
       ctaButton: "طلب فحص الآن",
       requestTestTitle: "جاهز لفحص مواد مشروعك؟"
     },
+    vip: {
+      title: "خدمات VIP الحصرية",
+      subtitle: "ارتقِ بتجربة مشروعك مع خدماتنا المتميزة، المصممة خصيصاً لأولئك الذين يبحثون عن الاستثنائي.",
+      ctaButton: "استفسر عن خدمات VIP"
+    },
     contact: {
       title: "اتصل بنا",
       address: "الشارع الرئيسي، طوباس، فلسطين",
@@ -128,7 +138,7 @@ export const DEFAULT_CONTENT = {
   }
 };
 
-export const DEFAULT_SERVICES: ServiceItem[] = [
+export const DEFAULT_SERVICES = [
   {
     id: 'civil',
     title: { en: "Civil Engineering", ar: "الهندسة المدنية" },
@@ -161,7 +171,7 @@ export const DEFAULT_SERVICES: ServiceItem[] = [
   },
   {
     id: 'consulting',
-    title: { en: "Engineering Consulting", ar: "الاستشارات الهندسية" },
+    title: { en: "Engineering Consulting", "ar": "الاستشارات الهندسية" },
     description: { en: "Expert advice and feasibility studies for complex engineering challenges.", ar: "مشورة الخبراء ودراسات الجدوى للتحديات الهندسية المعقدة." },
     iconName: "Briefcase"
   },
@@ -185,7 +195,7 @@ export const DEFAULT_SERVICES: ServiceItem[] = [
   }
 ];
 
-export const DEFAULT_TEAM: TeamMember[] = [
+export const DEFAULT_TEAM = [
   {
     id: 'saed',
     name: { en: "Eng. Saed Salahat", ar: "م. سائد صلاحات" },
@@ -212,7 +222,6 @@ export const DEFAULT_TEAM: TeamMember[] = [
   }
 ];
 
-// Updated Filter Categories based on Building Types
 export const PROJECT_CATEGORIES = [
   { id: 'all', label: { en: "All Projects", ar: "جميع المشاريع" } },
   { id: 'residential', label: { en: "Residential", ar: "سكني" } },
@@ -224,8 +233,7 @@ export const PROJECT_CATEGORIES = [
   { id: 'infrastructure', label: { en: "Infrastructure", ar: "تطوير البنية التحتية" } }
 ];
 
-// Categories: 'residential', 'commercial', 'religious', 'industrial', 'educational', 'healthcare', 'infrastructure'
-export const DEFAULT_PROJECTS: ProjectItem[] = [
+export const DEFAULT_PROJECTS = [
   {
     id: 'p1',
     title: { en: "Tubas Commercial Center", ar: "مركز طوباس التجاري" },
@@ -382,7 +390,7 @@ export const DEFAULT_PROJECTS: ProjectItem[] = [
   }
 ];
 
-export const DEFAULT_LAB_SERVICES: LabServiceItem[] = [
+export const DEFAULT_LAB_SERVICES = [
   {
     id: "soil-analysis",
     title: { en: "Soil Testing and Characteristics Analysis", ar: "فحص التربة وتحليل خصائصها" },
@@ -427,7 +435,7 @@ export const DEFAULT_LAB_SERVICES: LabServiceItem[] = [
   }
 ];
 
-export const DEFAULT_LAB_GALLERY: string[] = [
+export const DEFAULT_LAB_GALLERY = [
   "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
@@ -436,4 +444,47 @@ export const DEFAULT_LAB_GALLERY: string[] = [
   "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80",
   "https://images.unsplash.com/photo-1516937941348-c0331b32d543?auto=format&fit=crop&w=800&q=80"
+];
+
+export const DEFAULT_VIP_SERVICES = [
+  {
+    id: 'vr-360',
+    title: { en: "Advanced VR and 360° Visualization", ar: "الواقع الافتراضي والتصور بزاوية 360 درجة" },
+    description: {
+      en: "Step into your project before construction begins. We offer interactive VR tours and high-resolution 360° panoramic views viewable on any smart device, giving you a true sense of scale and space.",
+      ar: "ادخل إلى مشروعك قبل بدء البناء. نقدم جولات تفاعلية بالواقع الافتراضي وصور بانورامية عالية الدقة بزاوية 360 درجة قابلة للعرض على أي جهاز ذكي، مما يمنحك شعوراً حقيقياً بالأبعاد والمساحة."
+    },
+    image: "https://images.unsplash.com/photo-1622979135228-5b1ed3172c91?auto=format&fit=crop&w=800&q=80",
+    iconName: "MonitorPlay"
+  },
+  {
+    id: '3d-print',
+    title: { en: "Premium 3D Printed Models", ar: "نماذج ثلاثية الأبعاد مطبوعة بدقة عالية" },
+    description: {
+      en: "Visualize the finest details with a physical miniature model. Using cutting-edge 3D printing technology, we create precise, tangible representations of your architectural vision.",
+      ar: "تخيل أدق التفاصيل مع نموذج مصغر ملموس. باستخدام أحدث تقنيات الطباعة ثلاثية الأبعاد، نصنع تمثيلات دقيقة وملموسة لرؤيتك المعمارية."
+    },
+    image: "https://images.unsplash.com/photo-1633535921782-d2789ebbe5a8?auto=format&fit=crop&w=800&q=80",
+    iconName: "Cuboid"
+  },
+  {
+    id: 'luxury-book',
+    title: { en: "Luxury Design Documentation", ar: "كتاب توثيق التصميم الفاخر" },
+    description: {
+      en: "A permanent legacy of your project. We design, print, and bind a luxury book documenting every detail, plan, and artistic render, serving as a professional record and keepsake.",
+      ar: "إرث دائم لمشروعك. نقوم بتصميم وطباعة وتجليد كتاب فاخر يوثق كل التفاصيل والمخططات واللقطات الفنية، ليكون سجلاً احترافياً وذكرى قيمة."
+    },
+    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
+    iconName: "BookOpen"
+  },
+  {
+    id: 'gov-services',
+    title: { en: "Government Transactions Management", ar: "إدارة المعاملات الحكومية" },
+    description: {
+      en: "Experience peace of mind with our dedicated liaison officer. We handle all municipal approvals, permits, and government procedures on your behalf, ensuring efficiency and legal compliance.",
+      ar: "تمتع براحة البال مع مسؤول الارتباط المخصص لدينا. نتولى جميع الموافقات البلدية والتصاريح والإجراءات الحكومية نيابة عنك، مما يضمن الكفاءة والامتثال القانوني."
+    },
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
+    iconName: "ShieldCheck"
+  }
 ];

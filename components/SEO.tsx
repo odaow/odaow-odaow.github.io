@@ -45,6 +45,11 @@ const SEO: React.FC<SEOProps> = ({ page, title: overrideTitle, description: over
       title = `${t.nav.lab} | ${siteName}`;
       description = t.lab.subtitle;
       break;
+    case 'vip-services':
+      // Defensive check: t.nav.vip might be undefined if content.json is stale
+      title = `${t.nav?.vip || 'VIP Services'} | ${siteName}`;
+      description = t.vip?.subtitle || 'Exclusive VIP Services';
+      break;
     case 'contact':
       title = `${t.nav.contact} | ${siteName}`;
       description = lang === 'ar' ? "تواصل مع مكتب النبراس في طوباس للاستشارات الهندسية وفحوصات المختبر." : "Contact Nebras Engineering Office in Tubas for engineering consultancy and lab testing.";

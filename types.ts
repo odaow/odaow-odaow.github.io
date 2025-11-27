@@ -1,4 +1,5 @@
 
+
 export type Language = 'en' | 'ar';
 
 export interface Translation {
@@ -8,6 +9,7 @@ export interface Translation {
     services: string;
     projects: string;
     lab: string;
+    vip: string;
     contact: string;
   };
   home: {
@@ -49,6 +51,11 @@ export interface Translation {
     galleryTitle: string;
     ctaButton: string;
     requestTestTitle: string;
+  };
+  vip: {
+    title: string;
+    subtitle: string;
+    ctaButton: string;
   };
   contact: {
     title: string;
@@ -126,4 +133,18 @@ export interface LabServiceItem {
   };
   category: string;
   image?: string;
+}
+
+export interface VipServiceItem {
+  id: string;
+  title: {
+    en: string;
+    ar: string;
+  };
+  description: {
+    en: string;
+    ar: string;
+  };
+  image: string;
+  iconName?: string;
 }

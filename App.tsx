@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -11,6 +12,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import ProjectDetail from './pages/ProjectDetail';
 import Lab from './pages/Lab';
+import VipServices from './pages/VipServices';
 import SEO from './components/SEO';
 
 const App: React.FC = () => {
@@ -27,6 +29,7 @@ const App: React.FC = () => {
                 <Route path="projects" element={<><SEO page="projects" /><Projects /></>} />
                 <Route path="projects/:id" element={<ProjectDetail />} />
                 <Route path="lab" element={<><SEO page="lab" /><Lab /></>} />
+                <Route path="vip-services" element={<><SEO page="vip-services" /><VipServices /></>} />
                 <Route path="contact" element={<><SEO page="contact" /><Contact /></>} />
                 {/* Catch-all route to redirect 404s to home */}
                 <Route path="*" element={<Navigate to="/" replace />} />

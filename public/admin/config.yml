@@ -1,3 +1,5 @@
+
+
 backend:
   name: git-gateway
   branch: main
@@ -33,6 +35,7 @@ collections:
                       - { label: "Services", name: "services", widget: "string" }
                       - { label: "Projects", name: "projects", widget: "string" }
                       - { label: "Lab", name: "lab", widget: "string" }
+                      - { label: "VIP Services", name: "vip", widget: "string" }
                       - { label: "Contact", name: "contact", widget: "string" }
                   - label: "Home Page"
                     name: "home"
@@ -94,6 +97,13 @@ collections:
                       - { label: "Gallery Title", name: "galleryTitle", widget: "string" }
                       - { label: "CTA Button", name: "ctaButton", widget: "string" }
                       - { label: "Request Test Title", name: "requestTestTitle", widget: "string" }
+                  - label: "VIP Text"
+                    name: "vip"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Subtitle", name: "subtitle", widget: "text" }
+                      - { label: "CTA Button", name: "ctaButton", widget: "string" }
                   - label: "Common"
                     name: "common"
                     widget: "object"
@@ -115,6 +125,7 @@ collections:
                       - { label: "Services", name: "services", widget: "string" }
                       - { label: "Projects", name: "projects", widget: "string" }
                       - { label: "Lab", name: "lab", widget: "string" }
+                      - { label: "VIP Services", name: "vip", widget: "string" }
                       - { label: "Contact", name: "contact", widget: "string" }
                   - label: "Home Page"
                     name: "home"
@@ -176,6 +187,13 @@ collections:
                       - { label: "Gallery Title", name: "galleryTitle", widget: "string" }
                       - { label: "CTA Button", name: "ctaButton", widget: "string" }
                       - { label: "Request Test Title", name: "requestTestTitle", widget: "string" }
+                  - label: "VIP Text"
+                    name: "vip"
+                    widget: "object"
+                    fields:
+                      - { label: "Title", name: "title", widget: "string" }
+                      - { label: "Subtitle", name: "subtitle", widget: "text" }
+                      - { label: "CTA Button", name: "ctaButton", widget: "string" }
                   - label: "Common"
                     name: "common"
                     widget: "object"
@@ -203,6 +221,28 @@ collections:
                 fields:
                   - { label: "English", name: "en", widget: "text" }
                   - { label: "Arabic", name: "ar", widget: "text" }
+
+          # VIP Services Collection
+          - label: "VIP Services"
+            name: "vipServices"
+            widget: "list"
+            collapsed: true
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Icon Name (Lucide)", name: "iconName", widget: "string" }
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Arabic", name: "ar", widget: "string" }
+              - label: "Description"
+                name: "description"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "text" }
+                  - { label: "Arabic", name: "ar", widget: "text" }
+              - { label: "Service Image", name: "image", widget: "image" }
 
           # Team Collection
           - label: "Team"
